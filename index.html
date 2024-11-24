@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Juego de Crucigrama</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div id="inicio">
+        <h1>Juego de Crucigrama</h1>
+        <label for="nivel">Selecciona un nivel:</label>
+        <select id="nivel">
+            <option value="1">Nivel 1 (5 horizontales y 5 verticales)</option>
+            <option value="2">Nivel 2 (8 horizontales y 8 verticales)</option>
+            <option value="3">Nivel 3 (12 horizontales y 12 verticales)</option>
+            <option value="4">Nivel 4 (15 a 24 palabras)</option>
+        </select>
+        <button onclick="iniciarJuego()">Comenzar Juego</button>
+    </div>
+
+    <div id="juego" style="display: none;">
+        <div id="mensajeError" style="color: red;"></div>
+        <div id="mensajeExito" style="color: green;"></div>
+        <div id="crucigrama"></div>
+        <div id="pistas"></div>
+        <div id="areaContraseña" style="display: none;">
+            <label for="inputContraseña">Introduce la contraseña:</label>
+            <input type="password" id="inputContraseña">
+            <button onclick="verificarContraseña()">Aceptar</button>
+            <div id="errorContraseña" style="color: red;"></div>
+        </div>
+        <button onclick="verificarRespuestas()">Verificar Respuestas</button>
+        <button onclick="mostrarAreaContraseña()">Mostrar Respuestas</button>
+        <button onclick="descargarComoPDF()">Descargar como PDF</button>
+        <button onclick="reiniciarJuego()">Reiniciar Juego</button>
+        <div id="recursosVisuales">
+            <p>Recursos Visuales: <a href="https://sites.google.com/pcpuma.acatlan.unam.mx/proyecto-final/recursos-visuales?authuser=0" target="_blank">https://sites.google.com/pcpuma.acatlan.unam.mx/proyecto-final/recursos-visuales?authuser=0</a></p>
+        </div>
+    </div>
+
+    <script src="palabras.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
